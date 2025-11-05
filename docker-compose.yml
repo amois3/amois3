@@ -1,0 +1,37 @@
+version: '3.8'
+
+services:
+  mongodb:
+    image: mongo:7.0
+    container_name: nutrition-bot-mongodb
+    restart: unless-stopped
+    environment:
+      MONGO_INITDB_DATABASE: nutrition_bot
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongodb_data:/data/db
+    networks:
+      - nutrition-bot-network
+
+  bot:
+    build: .
+    container_name: nutrition-bot
+    restart: unless-stopped
+    depends_on:
+      - mongodb
+    env_file:
+      - .env
+    environment:
+      MONGODB_URI: mongodb://mongodb:27017
+    volumes:
+      - ./temp:/app/temp
+    networks:
+      - nutrition-bot-network
+
+volumes:
+  mongodb_data:
+
+networks:
+  nutrition-bot-network:
+    driver: bridge

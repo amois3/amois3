@@ -1,0 +1,35 @@
+# Telegram Bot Framework
+aiogram==3.4.1
+aiohttp==3.9.1
+
+# Database
+motor==3.3.2
+pymongo==4.6.1
+
+# Google Gemini AI
+google-generativeai==0.3.2
+
+# Scheduling
+APScheduler==3.10.4
+pytz==2023.3
+
+# Image Processing
+Pillow==10.2.0
+python-magic==0.4.27
+
+# Data Visualization
+matplotlib==3.8.2
+seaborn==0.13.1
+numpy==1.26.3
+
+# Environment & Config
+python-dotenv==1.0.0
+pydantic==2.5.3
+pydantic-settings==2.1.0
+
+# Utilities
+python-dateutil==2.8.2
+validators==0.22.0
+
+# Logging
+structlog==24.1.0

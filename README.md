@@ -1,10 +1,116 @@
-- 👋 Hi, I’m @amois3
-- 👀 I’m interested in development
-- 🌱 I’m currently learning </>Python
-- 💞️ I’m looking to collaborate on ...
-- 📫 How to reach me: Twitter
+# 🥑 AI Nutrition Telegram Bot (Gemini Edition)
 
-<!---
-amois3/amois3 is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile.
-You can click the Preview link to take a look at your changes.
---->
+**БЕСПЛАТНЫЙ** Telegram-бот для отслеживания питания с AI-анализом (Google Gemini).
+
+## ✨ Почему Gemini?
+
+### 💰 **ПРАКТИЧЕСКИ БЕСПЛАТНО!**
+- Google Gemini 1.5 Flash: **БЕСПЛАТНО** до 15 запросов/минуту
+- vs OpenAI GPT-4o: ~$15-20/месяц для семьи
+
+### 🚀 **БЫСТРЕЕ!**
+- Gemini 1.5 Flash в 2-3 раза быстрее GPT-4o
+
+### 📊 **ОТЛИЧНОЕ КАЧЕСТВО**
+- Gemini обучен на огромной базе Google Images
+- Превосходно распознает еду
+- Лучше понимает русскую кухню
+
+## 🔥 Возможности
+
+- **📸 Анализ фото** - Gemini Vision распознает блюда и считает КБЖУ
+- **✏️ Текстовый ввод** - опишите что съели
+- **👤 Умный профиль** - автоматический расчет BMR/TDEE
+- **🎯 Цели** - похудение, набор массы, поддержка веса
+- **💬 AI-чат** - задавайте вопросы с контекстом
+- **📊 Графики** - калории, КБЖУ, вес
+- **🔍 История и поиск**
+- **📈 Автоматические отчеты**
+
+## 🚀 Быстрый старт
+
+### 1. Клонируйте
+
+```bash
+git clone https://github.com/amois3/nutrition_bot.git
+cd nutrition_bot
+```
+
+### 2. API ключи
+
+**Gemini API (БЕСПЛАТНЫЙ):**
+1. Откройте: https://aistudio.google.com/app/apikey
+2. Нажмите "Get API key" → "Create API key"
+3. Скопируйте ключ
+
+**Telegram Bot:**
+1. Откройте [@BotFather](https://t.me/botfather)
+2. Отправьте `/newbot`
+3. Скопируйте токен
+
+### 3. Настройте .env
+
+Файл `.env` уже создан с вашими ключами!
+
+### 4. Запустите
+
+```bash
+# С Docker
+docker-compose up -d
+
+# Или локально
+pip install -r requirements.txt
+python bot.py
+```
+
+## 📋 Команды
+
+- `/start` - Начать
+- `/help` - Справка
+- `/profile` - Профиль
+- `/setage <возраст>` - Установить возраст
+- `/setheight <рост>` - Установить рост
+- `/setweight <вес>` - Установить вес
+- `/report` - Отчет за сегодня
+- `/graph` - График питания
+- `/history` - История
+- `/search <текст>` - Поиск
+- `/chat` / `/stopchat` - AI-чат
+
+## 💰 Стоимость
+
+**Google Gemini 1.5 Flash:**
+- **БЕСПЛАТНО** до 15 запросов/минуту
+- **БЕСПЛАТНО** до 1500 запросов/день
+- Этого хватит на семью из 4 человек!
+
+**vs OpenAI:**
+- OpenAI GPT-4o: ~$0.01/фото = ~$15-20/месяц
+- **Gemini: $0/месяц** 🎉
+
+## 🛠️ Технологии
+
+- Python 3.11 + aiogram 3.x
+- MongoDB + motor
+- **Google Gemini 1.5 Flash** - Vision & Text AI
+- Matplotlib - графики
+- Docker - развертывание
+
+## ⚠️ Лимиты Gemini
+
+Бесплатный план:
+- 15 запросов/минуту
+- 1500 запросов/день
+- 1 миллион токенов/день
+
+**Этого более чем достаточно для семьи!**
+
+## 📝 Лицензия
+
+MIT License
+
+---
+
+**Сделано с 💚 для здорового образа жизни**
+
+_Приватный репозиторий - только для личного использования_
