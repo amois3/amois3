@@ -11,9 +11,9 @@ class Settings(BaseSettings):
     # Telegram
     telegram_bot_token: str = Field(..., alias="TELEGRAM_BOT_TOKEN")
 
-    # Google Gemini
+    # Google Gemini Pro
     gemini_api_key: str = Field(..., alias="GEMINI_API_KEY")
-    gemini_model: str = Field(default="gemini-1.5-flash", alias="GEMINI_MODEL")
+    gemini_model: str = Field(default="gemini-1.5-pro", alias="GEMINI_MODEL")
 
     # MongoDB
     mongodb_uri: str = Field(default="mongodb://localhost:27017", alias="MONGODB_URI")
@@ -29,8 +29,8 @@ class Settings(BaseSettings):
     weekly_report_day: str = Field(default="monday", alias="WEEKLY_REPORT_DAY")
     weekly_report_time: str = Field(default="09:00", alias="WEEKLY_REPORT_TIME")
 
-    # Gemini Rate Limiting (Free tier: 15 requests/min)
-    gemini_rate_limit: int = Field(default=15, alias="GEMINI_RATE_LIMIT")
+    # Gemini Rate Limiting (Pro tier: 60 requests/min)
+    gemini_rate_limit: int = Field(default=60, alias="GEMINI_RATE_LIMIT")
 
     # Image Optimization
     max_image_size: int = Field(default=2048, alias="MAX_IMAGE_SIZE")

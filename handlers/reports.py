@@ -40,6 +40,6 @@ async def report_cmd(msg: Message):
 
 @router.message(Command("cost"))
 async def cost_cmd(msg: Message):
-    # Gemini is FREE! No cost tracking needed
-    text = "💚 *Google Gemini - БЕСПЛАТНО!*\n\n✨ Все запросы бесплатны\n📊 Лимит: 15 запросов/мин\n🚀 Без абонентской платы"
+    # Gemini Pro subscription
+    text = "💎 *Google Gemini Pro*\n\n✨ Премиум подписка активна\n⚡ Лимит: 60 запросов/мин\n🚀 Модель: gemini-1.5-pro\n📊 Улучшенное качество анализа"
     await msg.answer(text, parse_mode="Markdown")
