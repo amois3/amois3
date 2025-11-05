@@ -10,7 +10,7 @@ logger = logging.getLogger(__name__)
 
 
 class ImageOptimizer:
-    """Optimize images for OpenAI API to save costs."""
+    """Optimize images for Gemini AI to reduce processing time."""
 
     def __init__(self):
         self.max_size = settings.max_image_size
@@ -71,9 +71,9 @@ class ImageOptimizer:
         """
         Estimate number of tokens for image.
 
-        Based on OpenAI's pricing:
-        - Low detail: 85 tokens
-        - High detail: 170 tokens + additional based on image size
+        Based on Gemini's processing:
+        - Images are processed efficiently
+        - Token count varies by content complexity
         """
         try:
             image = Image.open(BytesIO(image_bytes))

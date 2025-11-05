@@ -21,8 +21,7 @@ async def photo_handler(msg: Message):
         file = await msg.bot.get_file(photo.file_id)
         data = await msg.bot.download_file(file.file_path)
         b64 = optimizer.optimize_and_encode(data.read())
-        foods, nutr, anl, score, typ, inp, out = await gemini.analyze_meal_from_photo(b64, msg.caption, user)
-        await tracker.track_cost(msg.from_user.id, "gpt-4o", "photo", inp, out)
+        foods, nutr, anl, score, typ = await gemini.analyze_meal_from_photo(b64, msg.caption, user)
         meal = Meal(user_id=user.id, telegram_id=msg.from_user.id, meal_type=typ, foods=foods, total_nutrition=nutr, photo_file_id=photo.file_id, description=msg.caption, ai_analysis=anl, health_score=score)
         await db.create_meal(meal)
         await st.delete()
@@ -37,8 +36,7 @@ async def text_handler(msg: Message):
         return
     st = await msg.answer("⏳ Анализирую...")
     try:
-        foods, nutr, anl, score, typ, inp, out = await gemini.analyze_meal_from_text(msg.text, user)
-        await tracker.track_cost(msg.from_user.id, "gpt-4-turbo", "text", inp, out)
+        foods, nutr, anl, score, typ = await gemini.analyze_meal_from_text(msg.text, user)
         meal = Meal(user_id=user.id, telegram_id=msg.from_user.id, meal_type=typ, foods=foods, total_nutrition=nutr, description=msg.text, ai_analysis=anl, health_score=score)
         await db.create_meal(meal)
         await st.delete()

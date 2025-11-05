@@ -11,10 +11,9 @@ class Settings(BaseSettings):
     # Telegram
     telegram_bot_token: str = Field(..., alias="TELEGRAM_BOT_TOKEN")
 
-    # OpenAI
-    openai_api_key: str = Field(..., alias="OPENAI_API_KEY")
-    openai_model_vision: str = Field(default="gpt-4o", alias="OPENAI_MODEL_VISION")
-    openai_model_text: str = Field(default="gpt-4-turbo-preview", alias="OPENAI_MODEL_TEXT")
+    # Google Gemini
+    gemini_api_key: str = Field(..., alias="GEMINI_API_KEY")
+    gemini_model: str = Field(default="gemini-1.5-flash", alias="GEMINI_MODEL")
 
     # MongoDB
     mongodb_uri: str = Field(default="mongodb://localhost:27017", alias="MONGODB_URI")
@@ -30,9 +29,8 @@ class Settings(BaseSettings):
     weekly_report_day: str = Field(default="monday", alias="WEEKLY_REPORT_DAY")
     weekly_report_time: str = Field(default="09:00", alias="WEEKLY_REPORT_TIME")
 
-    # OpenAI Cost Tracking
-    openai_cost_limit_daily: float = Field(default=10.0, alias="OPENAI_COST_LIMIT_DAILY")
-    openai_cost_warn_threshold: float = Field(default=0.8, alias="OPENAI_COST_WARN_THRESHOLD")
+    # Gemini Rate Limiting (Free tier: 15 requests/min)
+    gemini_rate_limit: int = Field(default=15, alias="GEMINI_RATE_LIMIT")
 
     # Image Optimization
     max_image_size: int = Field(default=2048, alias="MAX_IMAGE_SIZE")

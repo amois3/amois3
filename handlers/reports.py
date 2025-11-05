@@ -40,7 +40,6 @@ async def report_cmd(msg: Message):
 
 @router.message(Command("cost"))
 async def cost_cmd(msg: Message):
-    daily = await db.get_daily_cost(msg.from_user.id)
-    total = await db.get_total_cost(msg.from_user.id)
-    text = f"💰 *Расходы OpenAI*\n\nСегодня: ${daily:.4f}\nВсего: ${total:.4f}"
+    # Gemini is FREE! No cost tracking needed
+    text = "💚 *Google Gemini - БЕСПЛАТНО!*\n\n✨ Все запросы бесплатны\n📊 Лимит: 15 запросов/мин\n🚀 Без абонентской платы"
     await msg.answer(text, parse_mode="Markdown")
