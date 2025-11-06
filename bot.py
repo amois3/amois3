@@ -20,8 +20,12 @@ logger = logging.getLogger(__name__)
 
 async def main():
     """Run bot."""
+    # Log token for debugging
+    token = settings.telegram_bot_token
+    logger.info(f"Using token: {token[:10]}...{token[-4:]}")
+
     # Initialize bot and dispatcher
-    bot = Bot(token=settings.telegram_bot_token, parse_mode=ParseMode.MARKDOWN)
+    bot = Bot(token=token, parse_mode=ParseMode.MARKDOWN)
     dp = Dispatcher()
 
     # Register all routers
