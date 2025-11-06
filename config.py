@@ -1,8 +1,12 @@
 """Bot configuration."""
 import os
+from pathlib import Path
 from typing import Optional
 from pydantic_settings import BaseSettings
 from pydantic import Field
+
+# Get the directory where config.py is located
+BASE_DIR = Path(__file__).resolve().parent
 
 
 class Settings(BaseSettings):
@@ -38,7 +42,7 @@ class Settings(BaseSettings):
     image_quality: int = Field(default=85, alias="IMAGE_QUALITY")
 
     class Config:
-        env_file = ".env"
+        env_file = str(BASE_DIR / ".env")
         env_file_encoding = "utf-8"
         case_sensitive = False
 
