@@ -19,13 +19,20 @@ still works the next morning.
 
 ## Selected systems
 
-**TITAN — self-hosted personal AI platform**<br>
-An original ReAct runtime with dynamic model and tool routing, 65 registered
+**TITAN — self-hosted personal AI platform** · [`titan_agent_case_study`](https://github.com/amois3/titan_agent_case_study)<br>
+An original ReAct runtime with dynamic model and tool routing, 61 registered
 tools, persistent vector and graph memory, proactive scheduled workflows, and
 approval gates on anything irreversible. Runs unattended on Linux and Docker
 behind a FastAPI + Next.js PWA with WebSockets, voice, file handling,
 scheduling, monitoring, device integration, event journaling and remote coding
 sessions.
+
+The linked repository is the provider and memory core, extracted and runnable:
+role-to-model routing with a provider fallback, the memory graph, atomic
+storage, and 17 tests pinning two defects that failed silently — an empty
+answer returned as a success, and an image dropped from the request without a
+word. The four design documents ship with it, including the one about giving an
+agent access to money.
 
 **AI NCP — grounded, permission-aware platform**<br>
 Memory-first architecture with permission-aware semantic and lexical recall,
@@ -34,9 +41,9 @@ correction, and per-provider execution policy. TypeScript monorepo across
 Next.js, NestJS, workers, Expo and PostgreSQL/pgvector. Verified at 20/20 on
 grounding and refusal evaluations, and 110/110 on the permission matrix.
 
-**TITAN Code — coding agent CLI** · [`titan_code`](https://github.com/amois3/titan_code)<br>
+**TITAN Code — coding agent CLI** · [`titan_code_case_study`](https://github.com/amois3/titan_code_case_study)<br>
 TypeScript, with its own tool loop and a terminal interface written directly
-against ANSI — an alternate screen buffer, scroll regions, seven zones — rather
+against ANSI — an alternate screen buffer, scroll regions, eight zones — rather
 than on a UI framework. MCP over stdio and Streamable HTTP with tools,
 resources and prompts. Subagents, skills, hooks, session persistence, context
 compaction, and 35 slash commands.
@@ -46,6 +53,11 @@ Seatbelt on macOS. Command text is parsed rather than pattern-matched, paths
 are resolved through symlinks before the containment check, and anything
 irreversible is confirmed. Runs on Linux, macOS and Windows, with CI on all
 three across three Node versions.
+
+The linked repository is that security core, extracted and runnable: the shell
+lexer and the policy over it, path containment through symlinks, the bubblewrap
+and Seatbelt backends, and the SSRF checks. Zero runtime dependencies, 62 tests,
+CI on nine platform and version combinations.
 
 **Snapence / NutriAI — multimodal nutrition SaaS**<br>
 Meal logging by photo, voice or text. Firebase auth, Stripe, FastAPI and
