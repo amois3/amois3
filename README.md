@@ -19,7 +19,7 @@ still works the next morning.
 
 ## Selected systems
 
-**TITAN — self-hosted personal AI platform**
+**TITAN — self-hosted personal AI platform**<br>
 An original ReAct runtime with dynamic model and tool routing, 65 registered
 tools, persistent vector and graph memory, proactive scheduled workflows, and
 approval gates on anything irreversible. Runs unattended on Linux and Docker
@@ -27,14 +27,14 @@ behind a FastAPI + Next.js PWA with WebSockets, voice, file handling,
 scheduling, monitoring, device integration, event journaling and remote coding
 sessions.
 
-**AI NCP — grounded, permission-aware platform**
+**AI NCP — grounded, permission-aware platform**<br>
 Memory-first architecture with permission-aware semantic and lexical recall,
 source-validated generation, private-room isolation, human review and
 correction, and per-provider execution policy. TypeScript monorepo across
 Next.js, NestJS, workers, Expo and PostgreSQL/pgvector. Verified at 20/20 on
 grounding and refusal evaluations, and 110/110 on the permission matrix.
 
-**TITAN Code — coding agent CLI** · [`titan_code`](https://github.com/amois3/titan_code)
+**TITAN Code — coding agent CLI** · [`titan_code`](https://github.com/amois3/titan_code)<br>
 TypeScript, with its own tool loop and a terminal interface written directly
 against ANSI — an alternate screen buffer, scroll regions, seven zones — rather
 than on a UI framework. MCP over stdio and Streamable HTTP with tools,
@@ -47,12 +47,12 @@ are resolved through symlinks before the containment check, and anything
 irreversible is confirmed. Runs on Linux, macOS and Windows, with CI on all
 three across three Node versions.
 
-**Snapence / NutriAI — multimodal nutrition SaaS**
+**Snapence / NutriAI — multimodal nutrition SaaS**<br>
 Meal logging by photo, voice or text. Firebase auth, Stripe, FastAPI and
 MongoDB behind an installable PWA in nine languages, with medical-safety
 guardrails on generated advice.
 
-**TITAN Marketing / Meet AI Summary**
+**TITAN Marketing / Meet AI Summary**<br>
 Hypothesis-to-measurement experiments with Thompson sampling, deterministic
 rewards and attribution reporting. Caption–audio fusion with live translation,
 evidence-backed reports and searchable meeting memory.
@@ -74,14 +74,14 @@ what a command looks like.
 
 ## Open source
 
-**[Matrix Watcher](https://matrixwatcher.space)** · [`matrixwatcher.space`](https://github.com/amois3/matrixwatcher.space)
+**[Matrix Watcher](https://matrixwatcher.space)** · [`matrixwatcher.space`](https://github.com/amois3/matrixwatcher.space)<br>
 Monitors nine independent real-world systems — crypto markets, earthquakes,
 space weather, quantum randomness and others — for cross-domain correlation.
 Pure statistics, no model in the loop. Running 24/7 and publishing the result
 it actually found: no significant signal so far. Reporting an absence is the
 point; a monitor that only announces discoveries is not measuring anything.
 
-**[`yield_monitor`](https://github.com/amois3/yield_monitor)**
+**[`yield_monitor`](https://github.com/amois3/yield_monitor)**<br>
 Manufacturing test-yield dashboard, built to a written specification. FastAPI
 and SQLite behind a three-panel dashboard — daily volume, part distribution,
 yield gauge — with a manual entry form, a natural-language query endpoint, and
@@ -92,15 +92,14 @@ calculation is correct.
 
 ## Stack
 
-**Languages** Python · TypeScript
-**Backend** FastAPI · NestJS · WebSockets · PostgreSQL/pgvector · MongoDB · SQLite
-**Frontend** Next.js · React · Expo · PWA
-**Infrastructure** Linux · Docker · self-hosted deployment · GitHub Actions
-**Models** OpenRouter · OpenAI · Anthropic · Google
-
-**Practice** agentic tool calling · RAG and grounded generation · vector and
-graph memory · human-in-the-loop approval · AI safety and evaluations ·
-multimodal systems · test automation
+| | |
+|---|---|
+| **Languages** | Python · TypeScript |
+| **Backend** | FastAPI · NestJS · WebSockets · PostgreSQL/pgvector · MongoDB · SQLite |
+| **Frontend** | Next.js · React · Expo · PWA |
+| **Infrastructure** | Linux · Docker · self-hosted deployment · GitHub Actions |
+| **Models** | OpenRouter · OpenAI · Anthropic · Google |
+| **Practice** | agentic tool calling · RAG and grounded generation · vector and graph memory · human-in-the-loop approval · AI safety and evaluations · multimodal systems · test automation |
 
 ---
 
