@@ -1,119 +1,64 @@
 # Aleksejs Moisejevs
 
-**AI Software Engineer — agent runtimes, grounded AI, multimodal SaaS**
+**AI Systems Architect & Agentic Product Builder**
 
-Latvia (EU) · open to remote roles worldwide · [amoisejevs3@gmail.com](mailto:amoisejevs3@gmail.com) · [LinkedIn](https://www.linkedin.com/in/moisejevs/)
-
----
-
-I build agents that run unattended and are trusted with real access — to a
-filesystem, to devices, to money. That last part is most of the work: an agent
-is easy to demonstrate and hard to leave running, and the difference is
-approval gates, kernel-level confinement, permission matrices, and failure
-that announces itself instead of going quiet.
-
-Architecture, APIs, safety model, interface, deployment — and the part where it
-still works the next morning.
+Agent runtimes · grounded AI · multimodal AI products  
+Latvia (EU) · open to remote roles worldwide · [LinkedIn](https://www.linkedin.com/in/moisejevs/) · [GitHub](https://github.com/amois3)
 
 ---
+
+I build AI-native products where the difficult part is not demonstrating an agent, but making it safe, observable, and dependable enough to run with real access. My work spans agent runtimes, permission-aware and source-grounded AI, persistent memory, multimodal product experiences, and production delivery.
 
 ## Selected systems
 
-**TITAN — self-hosted personal AI platform** · [`titan_agent_case_study`](https://github.com/amois3/titan_agent_case_study)<br>
-An original ReAct runtime with dynamic model and tool routing, 61 registered
-tools, persistent vector and graph memory, proactive scheduled workflows, and
-approval gates on anything irreversible. Runs unattended on Linux and Docker
-behind a FastAPI + Next.js PWA with WebSockets, voice, file handling,
-scheduling, monitoring, device integration, event journaling and remote coding
-sessions.
+**TITAN Code — independent TypeScript coding-agent CLI** · [public security-core case study](https://github.com/amois3/titan_code_case_study)
 
-The linked repository is the provider and memory core, extracted and runnable:
-role-to-model routing with a provider fallback, the memory graph, atomic
-storage, and 17 tests pinning two defects that failed silently — an empty
-answer returned as a success, and an image dropped from the request without a
-word. The four design documents ship with it, including the one about giving an
-agent access to money.
+An independent coding agent with its own tool loop, ANSI terminal renderer, sessions, permissions, MCP, subagents, skills, hooks, and context management. The security model uses OS confinement where supported: bubblewrap on Linux and Seatbelt on macOS, with deliberate policy and confirmation on Windows. The public case study is a runnable, dependency-free security core covering shell parsing, symlink-aware path containment, process isolation, and SSRF checks, with 62 tests and CI across nine platform/version combinations.
 
-**AI NCP — grounded, permission-aware platform**<br>
-Memory-first architecture with permission-aware semantic and lexical recall,
-source-validated generation, private-room isolation, human review and
-correction, and per-provider execution policy. TypeScript monorepo across
-Next.js, NestJS, workers, Expo and PostgreSQL/pgvector. Verified at 20/20 on
-grounding and refusal evaluations, and 110/110 on the permission matrix.
+**TITAN — self-hosted personal AI platform** · [public provider-and-memory-core case study](https://github.com/amois3/titan_agent_case_study)
 
-**TITAN Code — coding agent CLI** · [`titan_code_case_study`](https://github.com/amois3/titan_code_case_study)<br>
-TypeScript, with its own tool loop and a terminal interface written directly
-against ANSI — an alternate screen buffer, scroll regions, eight zones — rather
-than on a UI framework. MCP over stdio and Streamable HTTP with tools,
-resources and prompts. Subagents, skills, hooks, session persistence, context
-compaction, and 35 slash commands.
+A self-hosted personal AI platform with an original ReAct runtime, dynamic model and tool routing, persistent graph and vector memory, proactive scheduled work, and approval gates for irreversible actions. It runs unattended on a single Linux host behind FastAPI, a Next.js PWA, and WebSockets, with integrations for files, email, devices, and supervised trading workflows.
 
-Shell commands are confined by the operating system: bubblewrap on Linux,
-Seatbelt on macOS. Command text is parsed rather than pattern-matched, paths
-are resolved through symlinks before the containment check, and anything
-irreversible is confirmed. Runs on Linux, macOS and Windows, with CI on all
-three across three Node versions.
+**TITAN Marketing Agent — autonomous growth experimentation engine**
 
-The linked repository is that security core, extracted and runnable: the shell
-lexer and the policy over it, path containment through symlinks, the bubblewrap
-and Seatbelt backends, and the SSRF checks. Zero runtime dependencies, 62 tests,
-CI on nine platform and version combinations.
+A controlled experimentation loop for product marketing: model-assisted hypothesis and content generation, Thompson-sampling planning, tracked clicks and conversion events, deterministic rewards, and durable insight memory. Channel autonomy is explicit; voice quality is bounded by approved samples, critic passes, deterministic gates, and restart-safe database-backed orchestration.
 
-**Snapence / NutriAI — multimodal nutrition SaaS**<br>
-Meal logging by photo, voice or text. Firebase auth, Stripe, FastAPI and
-MongoDB behind an installable PWA in nine languages, with medical-safety
-guardrails on generated advice.
+**AI NCP — AI-native community operating system**
 
-**TITAN Marketing / Meet AI Summary**<br>
-Hypothesis-to-measurement experiments with Thompson sampling, deterministic
-rewards and attribution reporting. Caption–audio fusion with live translation,
-evidence-backed reports and searchable meeting memory.
+A memory-first social platform for invite-only professional communities - not a chatbot, feed clone, or generic RAG layer. Its core object is a living Space: people, rooms, threads, presence, permissions, events, memory, and AI-native navigation.
 
----
+The AI layer is bounded by product architecture. It retrieves only sources a member may access; answers are source-linked; private rooms remain isolated; memory carries scope, visibility, confidence, correction history, and auditability; providers are controlled by execution policy. The local-alpha foundation spans Next.js, NestJS, Expo, workers, PostgreSQL/pgvector, Redis, and shared TypeScript packages.
+
+**Multimodal AI products**
+
+[**nutrition_bot**](https://github.com/amois3/nutrition_bot) is an AI nutrition assistant with photo, voice, and natural-language meal logging, personal context, scheduled reports, analytics, access controls, and Docker deployment.
+
+[**Snapence**](https://github.com/amois3/snapence_android) is a multilingual nutrition product across FastAPI, React PWA, and Kotlin/Jetpack Compose Android, with Firebase identity, MongoDB, nine checked locales, and Google Play entitlements.
+
+[**Meet AI Summary**](https://github.com/amois3/meet_ai_summary) is a Google Meet Chrome Extension and meeting-analysis service: live English-to-Russian caption translation, user-initiated audio recovery for incomplete captions, canonical transcripts, verified reports, meeting chat, and search.
 
 ## How I work
 
-Agentic development. I design the architecture, orchestrate the agents that
-implement it, and own the outcome.
+Agentic development. I design the architecture, orchestrate the agents that implement it, and own the outcome.
 
-The bar for what ships does not move because of that. Tests that fail for a
-real reason rather than for a changed string. CI on every platform the thing
-claims to support. Documentation checked against the code instead of written
-from memory. Security decided by what the operating system enforces, not by
-what a command looks like.
-
----
+The bar for what ships does not move because of that. Tests that fail for a real reason rather than for a changed string. CI on every platform the thing claims to support. Documentation checked against the code instead of written from memory. Security decided by what the operating system enforces, not by what a command looks like.
 
 ## Open source
 
-**[Matrix Watcher](https://matrixwatcher.space)** · [`matrixwatcher.space`](https://github.com/amois3/matrixwatcher.space)<br>
-Monitors nine independent real-world systems — crypto markets, earthquakes,
-space weather, quantum randomness and others — for cross-domain correlation.
-Pure statistics, no model in the loop. Running 24/7 and publishing the result
-it actually found: no significant signal so far. Reporting an absence is the
-point; a monitor that only announces discoveries is not measuring anything.
+[**Matrix Watcher**](https://matrixwatcher.space) · [source](https://github.com/amois3/matrixwatcher.space)  
+Cross-domain anomaly monitor over independent real-world data feeds. It runs continuously and reports the result it actually finds - including no significant signal.
 
-**[`yield_monitor`](https://github.com/amois3/yield_monitor)**<br>
-Manufacturing test-yield dashboard, built to a written specification. FastAPI
-and SQLite behind a three-panel dashboard — daily volume, part distribution,
-yield gauge — with a manual entry form, a natural-language query endpoint, and
-a Selenium script that drives the browser end to end and asserts the yield
-calculation is correct.
-
----
+[**yield_monitor**](https://github.com/amois3/yield_monitor)  
+A FastAPI and SQLite manufacturing test-yield dashboard with browser-driven end-to-end verification.
 
 ## Stack
 
-| | |
+| Area | Technologies |
 |---|---|
-| **Languages** | Python · TypeScript |
-| **Backend** | FastAPI · NestJS · WebSockets · PostgreSQL/pgvector · MongoDB · SQLite |
-| **Frontend** | Next.js · React · Expo · PWA |
-| **Infrastructure** | Linux · Docker · self-hosted deployment · GitHub Actions |
-| **Models** | OpenRouter · OpenAI · Anthropic · Google |
-| **Practice** | agentic tool calling · RAG and grounded generation · vector and graph memory · human-in-the-loop approval · AI safety and evaluations · multimodal systems · test automation |
+| Languages | Python · TypeScript |
+| Backend | FastAPI · NestJS · WebSockets · PostgreSQL/pgvector · MongoDB · SQLite · Redis |
+| Frontend | Next.js · React · Expo · PWA · Kotlin/Jetpack Compose |
+| Infrastructure | Linux · Docker · self-hosted deployment · GitHub Actions |
+| Practice | agentic tool calling · grounded generation · vector/graph memory · approval flows · AI safety/evaluations · multimodal systems |
 
----
-
-Open to remote full-time and contract work.
-[amoisejevs3@gmail.com](mailto:amoisejevs3@gmail.com)
+Open to remote full-time and contract work worldwide.
