@@ -14,6 +14,10 @@ Latvia (EU) · open to remote roles worldwide · [LinkedIn](https://www.linkedin
 I build AI-native products where the difficult part is not demonstrating an agent, but making it safe, observable, and dependable enough to run with real access. My work spans agent runtimes, permission-aware and source-grounded AI, persistent memory, multimodal product experiences, and production delivery.
 
 
+## Public technical case studies
+
+[**AI NCP — permission and grounding core**](https://github.com/amois3/ai_ncp_case_study) · [**TITAN Marketing Agent — deterministic experimentation core**](https://github.com/amois3/titan_marketing_agent_case_study)
+
 ## Selected systems
 
 
